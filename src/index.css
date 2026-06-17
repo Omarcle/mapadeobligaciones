@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0F1B35;
+    color: #E8EDF5;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4 {
+    font-family: 'Sora', sans-serif;
+  }
+}
+
+@layer components {
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .glass-dark {
+    background: rgba(15, 27, 53, 0.8);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  
+  .enia-gradient {
+    background: linear-gradient(135deg, #D91023 0%, #F0A500 50%, #D91023 100%);
+  }
+  
+  .card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+  
+  .progress-bar {
+    background: linear-gradient(90deg, #06D6A0, #00B4D8);
+    border-radius: 99px;
+    height: 6px;
+    transition: width 1s ease-out;
+  }
+
+  .chat-bubble-user {
+    background: linear-gradient(135deg, #D91023, #F0A500);
+    border-radius: 18px 18px 4px 18px;
+  }
+  
+  .chat-bubble-ai {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px 18px 18px 4px;
+  }
+  
+  .typing-dot {
+    animation: typing 1.2s infinite;
+    border-radius: 50%;
+    background: #00B4D8;
+    width: 8px;
+    height: 8px;
+  }
+  
+  .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+  .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+  
+  @keyframes typing {
+    0%, 100% { opacity: 0.3; transform: translateY(0); }
+    50% { opacity: 1; transform: translateY(-4px); }
+  }
+  
+  .star-bg {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+  
+  .badge-urgente {
+    background: linear-gradient(135deg, #D91023, #ff4d6d);
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    border-radius: 99px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  
+  .badge-pendiente {
+    background: linear-gradient(135deg, #F0A500, #ffd166);
+    color: #1A1A2E;
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    border-radius: 99px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  
+  .badge-ok {
+    background: linear-gradient(135deg, #06D6A0, #00B4D8);
+    color: #1A1A2E;
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    border-radius: 99px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+}
+
+/* Scrollbar custom */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
+::-webkit-scrollbar-thumb { background: rgba(240,165,0,0.4); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(240,165,0,0.7); }
